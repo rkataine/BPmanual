@@ -1,0 +1,100 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=ISO-8859-1"/>
+  <meta name="description" content="BasePlayer manual">
+  <meta name="keywords" content="manual,science,sequencing,dna,rna,software,analysis,visualization,cancer,research,tool,user interface">
+  <meta name="author" content="Riku Katainen">
+  <link rel="stylesheet" type="text/css" href="content/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="left" class="column">
+        <div class="top-left">
+        LOGO
+        </div>
+
+        <div class="bottom">
+          <ul id="nav">
+              <li>
+                  <a href="content/home.html" class="selected" onclick="return loadIframe('frame', this.href)">Home</a>
+                  <ul>
+                      <li><a href="javascript:goto('intro');">Introduction</a></li>
+                      <li><a href="javascript:goto('citeus');">Cite us</a></li>
+                      <li><a href="javascript:goto('contact');">Contact</a></li>
+
+                  </ul>
+              </li>
+              <li>
+                  <a href="content/ui.html" onclick="return loadIframe('frame', this.href)">User interface</a>
+                  <ul>
+                      <li><a href="#">Navigation</a></li>
+                      <li><a href="#">Toolbar</a></li>
+                      <li><a href="#">Variant Handler</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="#">File types</a>
+                  <ul>
+                      <li><a href="#">VCF</a></li>
+                      <li><a href="#">BAM</a></li>
+                  </ul>
+              </li>
+          </ul>
+        </div>
+    </div>
+    <div id="right" class="column">
+        <div class="top-right">
+        BASEPLAYER MANUAL
+        </div>
+        <div class="bottom">
+          <iframe src="content/home.html" id="frame" class="bottom" frameborder="0"></iframe>
+        </div>
+    </div>
+    <script>
+      function loadIframe(iframeName, url) {
+        var $iframe = $('#' + iframeName);
+
+        if ( $iframe.length ) {
+            $iframe.attr('src',url);
+            return false;
+        }
+        return true;
+      }
+
+      $nav = $("#nav");
+      //hide all but the first sub list
+      $nav.find("ul:not(:first)").hide();
+
+
+      //mark the first sub list as open
+      $nav.find("ul:first").addClass("open");
+
+
+      //receive clicks on the section links
+      $nav.on("click", ">li>a", function(e) {
+          //get a reference to the currently clicked link and its list item
+          $this = $(this);
+          $nav.find(".selected").removeClass("selected");
+          $this.addClass("selected");
+          $currentLi = $this.closest("li");
+          //if our current section is open, just return
+          if ($currentLi.find(".open").is("ul")) {
+              //if you want a section link to be able to collapse itself, uncomment this line:
+              //$currentLi.find("ul.open").slideUp().removeClass("open")
+
+              return;
+          }
+          //close all open lists
+          $nav.find("ul.open").slideUp().removeClass("open");
+          //open the submenu that belongs to this section
+          $currentLi.find("ul").slideDown().addClass("open");
+      });
+      function goto(anchor) {
+
+        var childWindow =  document.getElementById("frame").contentWindow;
+        childWindow.scrollTo(0,childWindow.document.getElementById(anchor).offsetTop);
+
+      }
+    </script>
+</body>
+</html>
