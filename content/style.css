@@ -34,11 +34,23 @@ body {
 
 .top-left {
     flex-shink: 0;
-}
+    background-color: rgb(220,220,220);
+    padding: 6px;
+     z-index: 2;
 
+}
+.sidebar {
+  background-color: rgb(240,240,240);
+  padding: 6px;
+  min-width: 180px;
+  
+}
 .top-right {
     flex-shrink: 0;
     display: inline-flex;
+    background-color: rgb(240,240,240);
+    padding-left: 10px;
+    box-shadow: -6px 6px 6px 0px #BBBBBB;
 }
 #frame {
   width: 800px;
@@ -48,12 +60,17 @@ body {
 }
 ul {
     /*display: inline-flex*/
-    list-style: square;
+    list-style: circle;
     font-size: 20px;
-}
 
+
+}
+ul#nav {
+  padding: 4px;
+}
 li.main {
   list-style: none;
+
 }
 ul a {
   text-decoration: none;
@@ -64,5 +81,5 @@ a.main {
 .bottom {
     flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
     overflow-y: auto;  /*adds scroll to this container*/
-    margin: 4px;
+    //margin: 4px;
 }
