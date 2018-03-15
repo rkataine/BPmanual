@@ -48,12 +48,19 @@ body {
 }
 ul {
     /*display: inline-flex*/
-    /*list-style: none;*/
+    list-style: square;
+    font-size: 20px;
+}
+
+li.main {
+  list-style: none;
 }
 ul a {
   text-decoration: none;
 }
-
+a.main {
+  font-weight: bold;
+}
 .bottom {
     flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
     overflow-y: auto;  /*adds scroll to this container*/

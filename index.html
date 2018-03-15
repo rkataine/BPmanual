@@ -10,13 +10,13 @@
 <body>
     <div id="left" class="column">
         <div class="top-left">
-        LOGO
+        <img src="content/images/bp_icon.svg">
         </div>
 
         <div class="bottom">
           <ul id="nav">
-              <li>
-                  <a href="content/home.html" class="selected" onclick="return loadIframe('frame', this.href)">Home</a>
+              <li class="main">
+                  <a class="main selected" href="content/home.html" onclick="return loadIframe('frame', this.href)">Home</a>
                   <ul>
                       <li><a href="javascript:goto('intro');">Introduction</a></li>
                       <li><a href="javascript:goto('citeus');">Cite us</a></li>
@@ -24,16 +24,16 @@
 
                   </ul>
               </li>
-              <li>
-                  <a href="content/ui.html" onclick="return loadIframe('frame', this.href)">User interface</a>
+              <li class="main">
+                  <a class="main" href="content/ui.html" onclick="return loadIframe('frame', this.href)">User interface</a>
                   <ul>
                       <li><a href="#">Navigation</a></li>
                       <li><a href="#">Toolbar</a></li>
                       <li><a href="#">Variant Handler</a></li>
                   </ul>
               </li>
-              <li>
-                  <a href="#">File types</a>
+              <li class="main">
+                  <a class="main" href="#">File types</a>
                   <ul>
                       <li><a href="#">VCF</a></li>
                       <li><a href="#">BAM</a></li>
@@ -44,7 +44,7 @@
     </div>
     <div id="right" class="column">
         <div class="top-right">
-        BASEPLAYER MANUAL
+        <h1>BasePlayer manual</h1>
         </div>
         <div class="bottom">
           <iframe src="content/home.html" id="frame" class="bottom" frameborder="0"></iframe>
