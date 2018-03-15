@@ -29,10 +29,34 @@
                   <a class="main" href="content/ui.html" onclick="return loadIframe('frame', this.href)">User interface</a>
                   <ul>
                       <li><a href="javascript:goto('mainwindow');">Main window</a></li>
-                      <li><a href="#">Navigation</a></li>
                       <li><a href="#">Toolbar</a></li>
+                        <ul>
+                            <li><a href="javascript:goto('filemenu');">File menu</a></li>
+                            <li><a href="javascript:goto('tools');">Tools</a></li>
+                            <li><a href="javascript:goto('varmanager');">Variant Manager</a></li>
+                            <li><a href="javascript:goto('search');">Search bar</a></li>
+                            <li><a href="javascript:goto('position');">Position fields</a></li>
+                        </ul>
+                      <li><a href="#">Genome bar</a></li>
+                        <ul>
+                            <li><a href="javascript:goto('cyto');">File menu</a></li>
+                            <li><a href="javascript:goto('genes');">Tools</a></li>
+                            <li><a href="javascript:goto('sequence');">Variant Manager</a></li>
+                        </ul>
+                      <li><a href="#">Region/annotation track</a></li>
+                      <li><a href="#">Control track</a></li>
+                      <li><a href="#">Sample track</a></li>
                       <li><a href="javascript:goto('varmanager');">Variant Manager</a></li>
                   </ul>
+              </li>
+              <li class="main">
+                  <a class="main" href="content/analysis.html" onclick="return loadIframe('frame', this.href)">Analysis</a>
+                  <ul>
+                      <li><a href="javascript:goto('intro');">Variant analysis</a></li>
+                      <li><a href="javascript:goto('citeus');">SV analysis</a></li>
+
+                  </ul>
+
               </li>
               <li class="main">
                   <a class="main" href="content/filetypes.html" onclick="return loadIframe('frame', this.href)">File types</a>
@@ -41,6 +65,11 @@
                       <li><a href="#">BAM</a></li>
                       <li><a href="#">BED</a></li>
                       <li><a href="#">BigWig</a></li>
+                      <li><a href="#">BigBed</a></li>
+                      <li><a href="#">GFF</a></li>
+                      <li><a href="#">TSV</a></li>
+                      <li><a href="#">FASTA</a></li>
+
                   </ul>
               </li>
               <li class="main">
