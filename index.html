@@ -4,6 +4,7 @@
   <meta name="description" content="BasePlayer manual">
   <meta name="keywords" content="manual,science,sequencing,dna,rna,software,analysis,visualization,cancer,research,tool,user interface">
   <meta name="author" content="Riku Katainen">
+
   <link rel="stylesheet" type="text/css" href="content/style.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -27,17 +28,28 @@
               <li class="main">
                   <a class="main" href="content/ui.html" onclick="return loadIframe('frame', this.href)">User interface</a>
                   <ul>
+                      <li><a href="javascript:goto('mainwindow');">Main window</a></li>
                       <li><a href="#">Navigation</a></li>
                       <li><a href="#">Toolbar</a></li>
-                      <li><a href="#">Variant Handler</a></li>
+                      <li><a href="javascript:goto('varmanager');">Variant Manager</a></li>
                   </ul>
               </li>
               <li class="main">
-                  <a class="main" href="#">File types</a>
+                  <a class="main" href="content/filetypes.html" onclick="return loadIframe('frame', this.href)">File types</a>
                   <ul>
                       <li><a href="#">VCF</a></li>
                       <li><a href="#">BAM</a></li>
+                      <li><a href="#">BED</a></li>
+                      <li><a href="#">BigWig</a></li>
                   </ul>
+              </li>
+              <li class="main">
+                  <a class="main" href="content/faq.html" onclick="return loadIframe('frame', this.href)">FAQ</a>
+
+              </li>
+              <li class="main">
+                  <a class="main" href="content/troubleshooting.html" onclick="return loadIframe('frame', this.href)">Troubleshooting</a>
+
               </li>
           </ul>
         </div>

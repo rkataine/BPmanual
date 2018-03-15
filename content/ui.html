@@ -1,58 +1,29 @@
+<h2 id="mainwindow">Main window</h2>
+<img src="images/meningioma.png" style="width:100%;">
 <p>
-UI
+<b>The main window of BasePlayer displaying three samples, a genomic region track and a population control data track.</b>
+Variant view of chromosome 10. (<b>a</b>) Toolbar contains tools for managing the data and navigating the genome. (<b>b</b>) Genome
+bar visualizes chromosome bands and genes. Reference sequence and gene annotation can be changed from dropdown menus at
+left. Memory usage shows used and allocated memory for BasePlayer. (<b>c</b>) Region tracks are used to exclude and annotate variants.
+In addition, various types of regional or base specific scores can be visualized as histograms and TF binding motifs as sequence logos.
+Pressing the red play button will apply the track - this will exclude any variants outside the region.
+(<b>d</b>) Control tracks can be used to exclude common polymorphisms by setting the allele frequency threshold. (<b>e</b>) Sample tracks visualize VCF
+and BAM files of the sample overlayed. Sample name and statistics for currently visible variants shown on the left. Vertical
+lines represent variant calls in a sample, colored as red, green (SNV or indel in coding region, respectively) and grey (variant
+in non-coding region). Height is relative to the sequencing coverage at the variant locus.
+
+<h2 id="varmanager">Variant Manager</h2>
+<img src="images/varmanager.png" style="width:70%;">
 <p>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus malesuada massa a est porttitor, id vulputate mauris tincidunt. Suspendisse a magna urna. Cras odio nunc, aliquet ac lacus nec, ullamcorper malesuada quam. Phasellus aliquet, purus a volutpat gravida, leo nisl tincidunt ante, eu scelerisque mauris velit in dui. Nulla quis magna nec augue gravida convallis. Sed porta pretium nibh non semper. Donec ut molestie orci. Vivamus pulvinar leo tellus, at tempor magna efficitur vitae. Suspendisse egestas rhoncus sem, eu posuere neque ultrices in. Nam a ligula sapien. Vestibulum eu consequat elit.
-
-Duis gravida porta purus sed dignissim. Proin hendrerit nulla vel ante elementum, euismod varius elit tincidunt. Etiam congue leo ultrices sem consequat, eu imperdiet lorem efficitur. Maecenas dui mauris, auctor vel vestibulum non, semper id elit. Sed quis massa sem. Mauris facilisis nunc eu sapien iaculis dapibus. Nam consectetur magna ac ante dignissim finibus. Vivamus ut neque iaculis, pellentesque libero in, finibus ex. Ut semper facilisis interdum. Nunc sapien mauris, suscipit a tortor eget, tincidunt interdum eros.
-
-Integer auctor massa quis eros tempor, eget iaculis ante finibus. Nulla at faucibus nibh, condimentum pharetra velit. Pellentesque nunc libero, ultricies quis metus quis, finibus placerat ipsum. Duis cursus viverra fermentum. Sed accumsan lectus et velit semper sodales. Etiam condimentum bibendum elit, pulvinar mollis velit volutpat et. Aliquam lorem libero, facilisis ut quam quis, luctus ultrices magna. Aliquam ullamcorper turpis nec tortor venenatis consectetur. Praesent ultrices venenatis tortor vitae placerat.
-
-Quisque ornare sit amet risus nec tincidunt. Aliquam pharetra, metus id ultrices ornare, dui magna ultrices nisl, ut venenatis massa purus at augue. Cras eget finibus sapien. Duis tortor libero, viverra quis lectus sit amet, finibus ornare nunc. Quisque ullamcorper dolor in quam eleifend, ornare tempus magna porttitor. Ut sit amet molestie dolor, id rutrum turpis. Phasellus auctor ac leo non vehicula. Vivamus posuere convallis nunc ut maximus. Ut ut mi semper, finibus quam luctus, tincidunt nisl. Ut vel auctor ante. Aenean pulvinar sed diam ut iaculis. In nec urna augue. Pellentesque in sem vel urna feugiat facilisis.
-
-Nulla facilisi. Fusce non mauris sed leo vehicula egestas id eget elit. Maecenas volutpat accumsan dapibus. Curabitur vitae leo tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris malesuada purus a velit ornare, a lobortis nulla laoreet. Quisque elementum nisl sed massa suscipit, accumsan sollicitudin ante venenatis. Proin ac lorem nec risus pellentesque ornare. Cras eu lorem ac magna semper blandit.
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus malesuada massa a est porttitor, id vulputate mauris tincidunt. Suspendisse a magna urna. Cras odio nunc, aliquet ac lacus nec, ullamcorper malesuada quam. Phasellus aliquet, purus a volutpat gravida, leo nisl tincidunt ante, eu scelerisque mauris velit in dui. Nulla quis magna nec augue gravida convallis. Sed porta pretium nibh non semper. Donec ut molestie orci. Vivamus pulvinar leo tellus, at tempor magna efficitur vitae. Suspendisse egestas rhoncus sem, eu posuere neque ultrices in. Nam a ligula sapien. Vestibulum eu consequat elit.
-
-Duis gravida porta purus sed dignissim. Proin hendrerit nulla vel ante elementum, euismod varius elit tincidunt. Etiam congue leo ultrices sem consequat, eu imperdiet lorem efficitur. Maecenas dui mauris, auctor vel vestibulum non, semper id elit. Sed quis massa sem. Mauris facilisis nunc eu sapien iaculis dapibus. Nam consectetur magna ac ante dignissim finibus. Vivamus ut neque iaculis, pellentesque libero in, finibus ex. Ut semper facilisis interdum. Nunc sapien mauris, suscipit a tortor eget, tincidunt interdum eros.
-
-Integer auctor massa quis eros tempor, eget iaculis ante finibus. Nulla at faucibus nibh, condimentum pharetra velit. Pellentesque nunc libero, ultricies quis metus quis, finibus placerat ipsum. Duis cursus viverra fermentum. Sed accumsan lectus et velit semper sodales. Etiam condimentum bibendum elit, pulvinar mollis velit volutpat et. Aliquam lorem libero, facilisis ut quam quis, luctus ultrices magna. Aliquam ullamcorper turpis nec tortor venenatis consectetur. Praesent ultrices venenatis tortor vitae placerat.
-
-Quisque ornare sit amet risus nec tincidunt. Aliquam pharetra, metus id ultrices ornare, dui magna ultrices nisl, ut venenatis massa purus at augue. Cras eget finibus sapien. Duis tortor libero, viverra quis lectus sit amet, finibus ornare nunc. Quisque ullamcorper dolor in quam eleifend, ornare tempus magna porttitor. Ut sit amet molestie dolor, id rutrum turpis. Phasellus auctor ac leo non vehicula. Vivamus posuere convallis nunc ut maximus. Ut ut mi semper, finibus quam luctus, tincidunt nisl. Ut vel auctor ante. Aenean pulvinar sed diam ut iaculis. In nec urna augue. Pellentesque in sem vel urna feugiat facilisis.
-
-Nulla facilisi. Fusce non mauris sed leo vehicula egestas id eget elit. Maecenas volutpat accumsan dapibus. Curabitur vitae leo tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris malesuada purus a velit ornare, a lobortis nulla laoreet. Quisque elementum nisl sed massa suscipit, accumsan sollicitudin ante venenatis. Proin ac lorem nec risus pellentesque ornare. Cras eu lorem ac magna semper blandit.
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus malesuada massa a est porttitor, id vulputate mauris tincidunt. Suspendisse a magna urna. Cras odio nunc, aliquet ac lacus nec, ullamcorper malesuada quam. Phasellus aliquet, purus a volutpat gravida, leo nisl tincidunt ante, eu scelerisque mauris velit in dui. Nulla quis magna nec augue gravida convallis. Sed porta pretium nibh non semper. Donec ut molestie orci. Vivamus pulvinar leo tellus, at tempor magna efficitur vitae. Suspendisse egestas rhoncus sem, eu posuere neque ultrices in. Nam a ligula sapien. Vestibulum eu consequat elit.
-
-Duis gravida porta purus sed dignissim. Proin hendrerit nulla vel ante elementum, euismod varius elit tincidunt. Etiam congue leo ultrices sem consequat, eu imperdiet lorem efficitur. Maecenas dui mauris, auctor vel vestibulum non, semper id elit. Sed quis massa sem. Mauris facilisis nunc eu sapien iaculis dapibus. Nam consectetur magna ac ante dignissim finibus. Vivamus ut neque iaculis, pellentesque libero in, finibus ex. Ut semper facilisis interdum. Nunc sapien mauris, suscipit a tortor eget, tincidunt interdum eros.
-
-Integer auctor massa quis eros tempor, eget iaculis ante finibus. Nulla at faucibus nibh, condimentum pharetra velit. Pellentesque nunc libero, ultricies quis metus quis, finibus placerat ipsum. Duis cursus viverra fermentum. Sed accumsan lectus et velit semper sodales. Etiam condimentum bibendum elit, pulvinar mollis velit volutpat et. Aliquam lorem libero, facilisis ut quam quis, luctus ultrices magna. Aliquam ullamcorper turpis nec tortor venenatis consectetur. Praesent ultrices venenatis tortor vitae placerat.
-
-Quisque ornare sit amet risus nec tincidunt. Aliquam pharetra, metus id ultrices ornare, dui magna ultrices nisl, ut venenatis massa purus at augue. Cras eget finibus sapien. Duis tortor libero, viverra quis lectus sit amet, finibus ornare nunc. Quisque ullamcorper dolor in quam eleifend, ornare tempus magna porttitor. Ut sit amet molestie dolor, id rutrum turpis. Phasellus auctor ac leo non vehicula. Vivamus posuere convallis nunc ut maximus. Ut ut mi semper, finibus quam luctus, tincidunt nisl. Ut vel auctor ante. Aenean pulvinar sed diam ut iaculis. In nec urna augue. Pellentesque in sem vel urna feugiat facilisis.
-
-Nulla facilisi. Fusce non mauris sed leo vehicula egestas id eget elit. Maecenas volutpat accumsan dapibus. Curabitur vitae leo tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris malesuada purus a velit ornare, a lobortis nulla laoreet. Quisque elementum nisl sed massa suscipit, accumsan sollicitudin ante venenatis. Proin ac lorem nec risus pellentesque ornare. Cras eu lorem ac magna semper blandit.
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus malesuada massa a est porttitor, id vulputate mauris tincidunt. Suspendisse a magna urna. Cras odio nunc, aliquet ac lacus nec, ullamcorper malesuada quam. Phasellus aliquet, purus a volutpat gravida, leo nisl tincidunt ante, eu scelerisque mauris velit in dui. Nulla quis magna nec augue gravida convallis. Sed porta pretium nibh non semper. Donec ut molestie orci. Vivamus pulvinar leo tellus, at tempor magna efficitur vitae. Suspendisse egestas rhoncus sem, eu posuere neque ultrices in. Nam a ligula sapien. Vestibulum eu consequat elit.
-
-<h1 id="intro">Intro</h1>
-Duis gravida porta purus sed dignissim. Proin hendrerit nulla vel ante elementum, euismod varius elit tincidunt. Etiam congue leo ultrices sem consequat, eu imperdiet lorem efficitur. Maecenas dui mauris, auctor vel vestibulum non, semper id elit. Sed quis massa sem. Mauris facilisis nunc eu sapien iaculis dapibus. Nam consectetur magna ac ante dignissim finibus. Vivamus ut neque iaculis, pellentesque libero in, finibus ex. Ut semper facilisis interdum. Nunc sapien mauris, suscipit a tortor eget, tincidunt interdum eros.
-
-Integer auctor massa quis eros tempor, eget iaculis ante finibus. Nulla at faucibus nibh, condimentum pharetra velit. Pellentesque nunc libero, ultricies quis metus quis, finibus placerat ipsum. Duis cursus viverra fermentum. Sed accumsan lectus et velit semper sodales. Etiam condimentum bibendum elit, pulvinar mollis velit volutpat et. Aliquam lorem libero, facilisis ut quam quis, luctus ultrices magna. Aliquam ullamcorper turpis nec tortor venenatis consectetur. Praesent ultrices venenatis tortor vitae placerat.
-
-Quisque ornare sit amet risus nec tincidunt. Aliquam pharetra, metus id ultrices ornare, dui magna ultrices nisl, ut venenatis massa purus at augue. Cras eget finibus sapien. Duis tortor libero, viverra quis lectus sit amet, finibus ornare nunc. Quisque ullamcorper dolor in quam eleifend, ornare tempus magna porttitor. Ut sit amet molestie dolor, id rutrum turpis. Phasellus auctor ac leo non vehicula. Vivamus posuere convallis nunc ut maximus. Ut ut mi semper, finibus quam luctus, tincidunt nisl. Ut vel auctor ante. Aenean pulvinar sed diam ut iaculis. In nec urna augue. Pellentesque in sem vel urna feugiat facilisis.
-
-Nulla facilisi. Fusce non mauris sed leo vehicula egestas id eget elit. Maecenas volutpat accumsan dapibus. Curabitur vitae leo tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris malesuada purus a velit ornare, a lobortis nulla laoreet. Quisque elementum nisl sed massa suscipit, accumsan sollicitudin ante venenatis. Proin ac lorem nec risus pellentesque ornare. Cras eu lorem ac magna semper blandit.
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus malesuada massa a est porttitor, id vulputate mauris tincidunt. Suspendisse a magna urna. Cras odio nunc, aliquet ac lacus nec, ullamcorper malesuada quam. Phasellus aliquet, purus a volutpat gravida, leo nisl tincidunt ante, eu scelerisque mauris velit in dui. Nulla quis magna nec augue gravida convallis. Sed porta pretium nibh non semper. Donec ut molestie orci. Vivamus pulvinar leo tellus, at tempor magna efficitur vitae. Suspendisse egestas rhoncus sem, eu posuere neque ultrices in. Nam a ligula sapien. Vestibulum eu consequat elit.
-
-Duis gravida porta purus sed dignissim. Proin hendrerit nulla vel ante elementum, euismod varius elit tincidunt. Etiam congue leo ultrices sem consequat, eu imperdiet lorem efficitur. Maecenas dui mauris, auctor vel vestibulum non, semper id elit. Sed quis massa sem. Mauris facilisis nunc eu sapien iaculis dapibus. Nam consectetur magna ac ante dignissim finibus. Vivamus ut neque iaculis, pellentesque libero in, finibus ex. Ut semper facilisis interdum. Nunc sapien mauris, suscipit a tortor eget, tincidunt interdum eros.
-
-Integer auctor massa quis eros tempor, eget iaculis ante finibus. Nulla at faucibus nibh, condimentum pharetra velit. Pellentesque nunc libero, ultricies quis metus quis, finibus placerat ipsum. Duis cursus viverra fermentum. Sed accumsan lectus et velit semper sodales. Etiam condimentum bibendum elit, pulvinar mollis velit volutpat et. Aliquam lorem libero, facilisis ut quam quis, luctus ultrices magna. Aliquam ullamcorper turpis nec tortor venenatis consectetur. Praesent ultrices venenatis tortor vitae placerat.
-
-Quisque ornare sit amet risus nec tincidunt. Aliquam pharetra, metus id ultrices ornare, dui magna ultrices nisl, ut venenatis massa purus at augue. Cras eget finibus sapien. Duis tortor libero, viverra quis lectus sit amet, finibus ornare nunc. Quisque ullamcorper dolor in quam eleifend, ornare tempus magna porttitor. Ut sit amet molestie dolor, id rutrum turpis. Phasellus auctor ac leo non vehicula. Vivamus posuere convallis nunc ut maximus. Ut ut mi semper, finibus quam luctus, tincidunt nisl. Ut vel auctor ante. Aenean pulvinar sed diam ut iaculis. In nec urna augue. Pellentesque in sem vel urna feugiat facilisis.
-
-Nulla facilisi. Fusce non mauris sed leo vehicula egestas id eget elit. Maecenas volutpat accumsan dapibus. Curabitur vitae leo tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris malesuada purus a velit ornare, a lobortis nulla laoreet. Quisque elementum nisl sed massa suscipit, accumsan sollicitudin ante venenatis. Proin ac lorem nec risus pellentesque ornare. Cras eu lorem ac magna semper blandit.
+<b>Variant Manager user interface and functions.</b> (<b>a</b>) Panels for variant quality filtering, variant hiding and sample-wise comparison.
+(<b>b</b>) SNV and Indel quality filters. Separate filters for indels can be activated in the “Indels” tab - same filtering is used by default
+for SNVs and indels. (<b>c</b>) Variant annotation panel including gene effect and output writing options. (<b>d</b>) Output table shows a list of
+genes and variants which pass the filters set in the Variant Manager as well as any activated track. This view also includes tables for
+variant statistics and region track annotations. (<b>e</b>) Sample-wise comparison panel. The upper slider sets the minimum number of cases which
+must harbor a variant in the same gene for these variants to be shown. It can thus be used if the sample set consists of cases with a
+common disease, which might not share the same specific variant even though the same gene is mutated (e.g., sporadic cases or somatic
+mutations in cancer). Lower slider compares individual variants. For instance, the value ⅔ means that only variants shared by two or
+three (all) samples are included and visible on the screen. “Window size for variant cluster” sets variant clustering behavior.
+(<b>f</b>) Inheritance pattern selector. (<b>g</b>) Sample Data dialog. Change / set sample name, gender,
+disease state and parents. (<b>h</b>) Variant Annotation options. Select desired functional classes and options for variants, which are included
+in the results. (<b>i</b>) Output selector for variant annotation results. Select the desired output format for the result file.
