@@ -1,15 +1,34 @@
-<img src="images/BaseAvatar.png">
-<p>
-<h2 id="intro">Introduction</h2>
-BasePlayer enables tightly integrated comparative variant analysis and visualization of thousands of next generation sequencing (NGS) data samples and millions of variants. BasePlayer is a highly efficient and user-friendly software for biological discovery in large-scale NGS data. It transforms an ordinary desktop computer into a large-scale genomic research platform, enabling also a non-technical user to perform complex comparative variant analyses, population frequency filtering and genome level annotations under intuitive, scalable and highly-responsive user interface to facilitate everyday genetic research as well as the search of novel discoveries.
-<p>
-<img src="images/Schema.png" style="width:90%">
+<html>
+<head>
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+   <script>$(function(){ $("head").load("header.html") });</script>
+</head>
+<body>
+    <div id="left" class="column"></div>
+    <div id="right" class="column"><div class="top-right"> <h1>BasePlayer manual</h1></div>
+        <div class="bottom content">
+          <img src="images/BaseAvatar.png">
+          <p>
+          <h2 id="intro">Introduction</h2>
+          BasePlayer enables tightly integrated comparative variant analysis and visualization of thousands of next generation sequencing (NGS) data samples and millions of variants. BasePlayer is a highly efficient and user-friendly software for biological discovery in large-scale NGS data. It transforms an ordinary desktop computer into a large-scale genomic research platform, enabling also a non-technical user to perform complex comparative variant analyses, population frequency filtering and genome level annotations under intuitive, scalable and highly-responsive user interface to facilitate everyday genetic research as well as the search of novel discoveries.
+          <p>
+          <img src="images/Schema.png" style="width:90%">
 
-<h2 id="citeus">Cite us</h2>
-You can cite us temporarily with the BioRxiv reference:<br>
-(Katainen et al., 2017) BasePlayer: Versatile Analysis Software For Large-Scale Genomic Variant Discovery. BioRxiv. <br>
-DOI: 10.1101/126482
+          <h2 id="citeus">Cite us</h2>
+          You can cite us temporarily with the BioRxiv reference:<br>
+          (Katainen et al., 2017) BasePlayer: Versatile Analysis Software For Large-Scale Genomic Variant Discovery. BioRxiv. <br>
+          DOI: 10.1101/126482
 
-<h2 id="contact">Contact</h2>
+          <h2 id="contact">Contact</h2>
 
-Contact us: help(at)baseplayer.fi
+          Contact us: help(at)baseplayer.fi
+        </div>
+      </div>
+<script>
+  $(document).ready(function() {
+    $('#left').load('sidebar.html');
+  });
+
+</script>
+</body>
+</html>

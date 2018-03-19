@@ -1,29 +1,48 @@
-<h2 id="mainwindow">Main window</h2>
-<img src="images/meningioma.png" style="width:100%;">
-<p>
-<b>The main window of BasePlayer displaying three samples, a genomic region track and a population control data track.</b>
-Variant view of chromosome 10. (<b>a</b>) Toolbar contains tools for managing the data and navigating the genome. (<b>b</b>) Genome
-bar visualizes chromosome bands and genes. Reference sequence and gene annotation can be changed from dropdown menus at
-left. Memory usage shows used and allocated memory for BasePlayer. (<b>c</b>) Region tracks are used to exclude and annotate variants.
-In addition, various types of regional or base specific scores can be visualized as histograms and TF binding motifs as sequence logos.
-Pressing the red play button will apply the track - this will exclude any variants outside the region.
-(<b>d</b>) Control tracks can be used to exclude common polymorphisms by setting the allele frequency threshold. (<b>e</b>) Sample tracks visualize VCF
-and BAM files of the sample overlayed. Sample name and statistics for currently visible variants shown on the left. Vertical
-lines represent variant calls in a sample, colored as red, green (SNV or indel in coding region, respectively) and grey (variant
-in non-coding region). Height is relative to the sequencing coverage at the variant locus.
+<html>
+<head>
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+   <script>$(function(){ $("head").load("header.html") });</script>
+</head>
+<body>
+    <div id="left" class="column"></div>
+    <div id="right" class="column"><div class="top-right"> <h1>BasePlayer manual</h1></div>
+        <div class="bottom content">
+          <h2 id="mainwindow">Main window</h2>
+          <img src="images/meningioma.png" style="width:100%;">
+          <p>
+          <b>The main window of BasePlayer displaying three samples, a genomic region track and a population control data track.</b>
+          Variant view of chromosome 10. (<b>a</b>) Toolbar contains tools for managing the data and navigating the genome. (<b>b</b>) Genome
+          bar visualizes chromosome bands and genes. Reference sequence and gene annotation can be changed from dropdown menus at
+          left. Memory usage shows used and allocated memory for BasePlayer. (<b>c</b>) Region tracks are used to exclude and annotate variants.
+          In addition, various types of regional or base specific scores can be visualized as histograms and TF binding motifs as sequence logos.
+          Pressing the red play button will apply the track - this will exclude any variants outside the region.
+          (<b>d</b>) Control tracks can be used to exclude common polymorphisms by setting the allele frequency threshold. (<b>e</b>) Sample tracks visualize VCF
+          and BAM files of the sample overlayed. Sample name and statistics for currently visible variants shown on the left. Vertical
+          lines represent variant calls in a sample, colored as red, green (SNV or indel in coding region, respectively) and grey (variant
+          in non-coding region). Height is relative to the sequencing coverage at the variant locus.
 
-<h2 id="varmanager">Variant Manager</h2>
-<img src="images/varmanager.png" style="width:70%;">
-<p>
-<b>Variant Manager user interface and functions.</b> (<b>a</b>) Panels for variant quality filtering, variant hiding and sample-wise comparison.
-(<b>b</b>) SNV and Indel quality filters. Separate filters for indels can be activated in the “Indels” tab - same filtering is used by default
-for SNVs and indels. (<b>c</b>) Variant annotation panel including gene effect and output writing options. (<b>d</b>) Output table shows a list of
-genes and variants which pass the filters set in the Variant Manager as well as any activated track. This view also includes tables for
-variant statistics and region track annotations. (<b>e</b>) Sample-wise comparison panel. The upper slider sets the minimum number of cases which
-must harbor a variant in the same gene for these variants to be shown. It can thus be used if the sample set consists of cases with a
-common disease, which might not share the same specific variant even though the same gene is mutated (e.g., sporadic cases or somatic
-mutations in cancer). Lower slider compares individual variants. For instance, the value ⅔ means that only variants shared by two or
-three (all) samples are included and visible on the screen. “Window size for variant cluster” sets variant clustering behavior.
-(<b>f</b>) Inheritance pattern selector. (<b>g</b>) Sample Data dialog. Change / set sample name, gender,
-disease state and parents. (<b>h</b>) Variant Annotation options. Select desired functional classes and options for variants, which are included
-in the results. (<b>i</b>) Output selector for variant annotation results. Select the desired output format for the result file.
+          <h2 id="varmanager">Variant Manager</h2>
+          <img src="images/varmanager.png" style="width:70%;">
+          <p>
+          <b>Variant Manager user interface and functions.</b> (<b>a</b>) Panels for variant quality filtering, variant hiding and sample-wise comparison.
+          (<b>b</b>) SNV and Indel quality filters. Separate filters for indels can be activated in the “Indels” tab - same filtering is used by default
+          for SNVs and indels. (<b>c</b>) Variant annotation panel including gene effect and output writing options. (<b>d</b>) Output table shows a list of
+          genes and variants which pass the filters set in the Variant Manager as well as any activated track. This view also includes tables for
+          variant statistics and region track annotations. (<b>e</b>) Sample-wise comparison panel. The upper slider sets the minimum number of cases which
+          must harbor a variant in the same gene for these variants to be shown. It can thus be used if the sample set consists of cases with a
+          common disease, which might not share the same specific variant even though the same gene is mutated (e.g., sporadic cases or somatic
+          mutations in cancer). Lower slider compares individual variants. For instance, the value ⅔ means that only variants shared by two or
+          three (all) samples are included and visible on the screen. “Window size for variant cluster” sets variant clustering behavior.
+          (<b>f</b>) Inheritance pattern selector. (<b>g</b>) Sample Data dialog. Change / set sample name, gender,
+          disease state and parents. (<b>h</b>) Variant Annotation options. Select desired functional classes and options for variants, which are included
+          in the results. (<b>i</b>) Output selector for variant annotation results. Select the desired output format for the result file.
+        </div>
+        </div>
+        <script>
+        $(document).ready(function() {
+        $('#left').load('sidebar.html');
+        });
+
+        </script>
+        </body>
+        </html>

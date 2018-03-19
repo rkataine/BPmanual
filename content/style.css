@@ -65,13 +65,20 @@ ul {
 
 
 }
+
+.hidden {
+  display: none;
+}
+.open {
+  display: block;
+}
 img {
   width:80%;
 }
 ul#nav {
   padding: 4px;
 }
-li.main {
+li.mainlist {
   list-style: none;
 
 }
@@ -84,5 +91,8 @@ a.main {
 .bottom {
     flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
     overflow-y: auto;  /*adds scroll to this container*/
-    //margin: 4px;
+    max-width: 800px;
+}
+.content {
+  padding-left: 10px;
 }

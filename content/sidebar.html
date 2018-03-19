@@ -1,0 +1,128 @@
+<div class="top-left">
+<img src="images/bp_icon.svg">
+</div>
+
+<nav class="bottom sidebar" id="side">
+
+  <ul id="nav">
+    <li class="mainlist">
+        <a class="main" href="home.html">Home</a>
+        <ul>
+            <li><a href="home.html#intro">Introduction</a></li>
+            <li><a href="home.html#citeus">Cite us</a></li>
+            <li><a href="home.html#contact">Contact</a></li>
+
+        </ul>
+    </li>
+    <li class="mainlist">
+        <a class="main" href="ui.html">User interface</a>
+        <ul>
+            <li><a href="ui.html#mainwindow">Main window</a></li>
+            <li><a href="ui.html#toolbar">Toolbar</a></li>
+              <ul>
+                  <li><a href="ui.html#filemenu">File menu</a></li>
+                  <li><a href="ui.html#tools">Tools</a></li>
+                  <li><a href="ui.html#varmanager">Variant Manager</a></li>
+                  <li><a href="ui.html#search">Search bar</a></li>
+                  <li><a href="ui.html#position">Position fields</a></li>
+              </ul>
+            <li><a href="ui.html#genomebar">Genome bar</a></li>
+              <ul>
+                  <li><a href="ui.html#cyto">Cytoband</a></li>
+                  <li><a href="ui.html#genes">Genes</a></li>
+                  <li><a href="ui.html#sequence">Sequence</a></li>
+              </ul>
+            <li><a href="ui.html#annotrack">Region/annotation track</a></li>
+            <li><a href="ui.html#controltrack">Control track</a></li>
+            <li><a href="ui.html#sampletrack">Sample track</a></li>
+            <li><a href="ui.html#varmanager">Variant Manager</a></li>
+        </ul>
+    </li>
+    <li class="mainlist">
+        <a class="main" href="analysis.html">Analysis</a>
+        <ul>
+            <li><a href="analysis.html#varanalysis">Variant analysis</a></li>
+            <li><a href="analysis.html#svanalysis">SV analysis</a></li>
+
+        </ul>
+
+    </li>
+    <li class="mainlist">
+        <a class="main" href="filetypes.html">File types</a>
+        <ul>
+            <li><a href="#">VCF</a></li>
+            <li><a href="#">BAM</a></li>
+            <li><a href="#">BED</a></li>
+            <li><a href="#">BigWig</a></li>
+            <li><a href="#">BigBed</a></li>
+            <li><a href="#">GFF</a></li>
+            <li><a href="#">TSV</a></li>
+            <li><a href="#">FASTA</a></li>
+
+        </ul>
+    </li>
+    <li class="mainlist">
+        <a class="main" href="faq.html">FAQ</a>
+        <ul>
+            <li><a href="javascript:goto('intro');">Variant analysis</a></li>
+            <li><a href="javascript:goto('citeus');">SV analysis</a></li>
+
+        </ul>
+    </li>
+    <li class="mainlist">
+        <a class="main" href="troubleshooting.html">Troubleshooting</a>
+        <ul>
+            <li><a href="javascript:goto('intro');">Variant analysis</a></li>
+            <li><a href="javascript:goto('citeus');">SV analysis</a></li>
+
+        </ul>
+    </li>
+  </ul>
+</nav>
+<script>
+
+  var href = document.location.href;
+  var lastPathSegment = href.substr(href.lastIndexOf('/') + 1).split("#")[0];
+  //window.alert(lastPathSegment)
+  var buttons = document.getElementsByClassName("main");
+
+  for(var i =0;i<buttons.length;i++) {
+    if(buttons[i].href) {
+      if(buttons[i].href.includes(lastPathSegment)) {
+        buttons[i].className += " selected";
+        if(buttons[i].nextElementSibling) {
+          buttons[i].nextElementSibling.className = "open";
+        }
+      }
+      else {
+        if(buttons[i].nextElementSibling) {
+          buttons[i].nextElementSibling.className = "hidden";
+        }
+      }
+    }
+  }
+  /*$nav = $("#nav");
+  //hide all but the first sub list
+  $nav.find("ul:not(:first)").hide();
+  //mark the first sub list as open
+  $nav.find("ul:first").addClass("open");
+  //receive clicks on the section links
+  $nav.on("click", ">li>a", function(e) {
+      //get a reference to the currently clicked link and its list item
+      $this = $(this);
+      $nav.find(".selected").removeClass("selected");
+      $this.addClass("selected");
+      $currentLi = $this.closest("li");
+      //if our current section is open, just return
+      if ($currentLi.find(".open").is("ul")) {
+          //if you want a section link to be able to collapse itself, uncomment this line:
+          //$currentLi.find("ul.open").slideUp().removeClass("open")
+
+          return;
+      }
+      //close all open lists
+      $nav.find("ul.open").slideUp().removeClass("open");
+      //open the submenu that belongs to this section
+      $currentLi.find("ul").slideDown().addClass("open");
+  });*/
+</script>
