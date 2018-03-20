@@ -4,17 +4,17 @@ html {
 a {
   color:black;
 }
+h2 {
+  background-color: rgb(240,240,240);
+  padding-left: 6px;
+}
+h3 {
+  background-color: rgb(240,240,240);
+  padding-left: 6px;
+}
 
-a:visited {
-  color:black;
-}
-a:hover {
-    color: red;
-}
-a.selected {
-  color:red;
-}
 body {
+    font-family: 'Roboto', serif;
     height: 100%;
     overflow: hidden;  /*makes the body non-scrollable (we will add scrolling to the sidebar and main content containers)*/
     margin: 0px;  /*removes default style*/
@@ -60,8 +60,8 @@ body {
 }
 ul {
     /*display: inline-flex*/
-    list-style: circle;
-    font-size: 20px;
+    list-style: none;
+    padding-left:10px;
 
 
 }
@@ -76,10 +76,27 @@ img {
   width:80%;
 }
 ul#nav {
-  padding: 4px;
+padding-left:0px;
+
 }
+li {
+  font-size: 14px;
+  padding-left: 4px;
+}
+
 li.mainlist {
   list-style: none;
+  font-size: 16px;
+}
+.level1 {
+  background-color: rgb(245,245,245);
+}
+.level2 {
+  background-color: rgb(235,235,235);
+
+}
+.level3 {
+  background-color: rgb(220,220,220);
 
 }
 ul a {
@@ -88,6 +105,19 @@ ul a {
 a.main {
   font-weight: bold;
 }
+a:visited {
+  color:black;
+}
+a:hover {
+    color: orange;
+    background-color: black;
+}
+a.selected {
+  color:orange;
+  background-color: black;
+  padding-left: 6px;
+  padding-right: 6px;
+}
 .bottom {
     flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
     overflow-y: auto;  /*adds scroll to this container*/
@@ -95,4 +125,5 @@ a.main {
 }
 .content {
   padding-left: 10px;
+  font-size: 14px;
 }
