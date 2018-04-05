@@ -106,7 +106,7 @@
   var urllocation = location.href;
   var hashindex = urllocation.indexOf("#");
    if(hashindex > -1){
-       window.location.hash=urllocation.substring(hashindex+1);
+       window.location = urllocation.substring(hashindex);
        //window.alert(urllocation.substring(hashindex+1));
     }
   for(var i =0;i<buttons.length;i++) {
