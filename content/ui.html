@@ -27,10 +27,17 @@
               <h4 id="caller">Variant caller</h4>
               <h4 id="BEDconvert">BED converter</h4>
                 <p>
-                BED converter is a tool, which allows user to import external annotation data (if not in standard format) to BasePlayer.
-                It converts any tab separated file to a sorted, compressed and indexed BED file. The file is then usable as an annotation, filtering
-                and visualization track. See demonstration video for the BED converter in link below.
+                BED converter is a tool, which allows user to import external annotation data, which is not in standard format (BED, BigWig, GFF etc.), to BasePlayer.
+                It converts any tab separated file (containing at least chromosome, start and end position fields) to a sorted, compressed and indexed BED file. The file is then usable as an annotation, filtering
+                and visualization track. See demonstration video of the BED converter usage with UCSC data in link below.
                 <iframe style="width:50%;height:auto;" src="https://www.youtube.com/embed/nSQX2Ctwhso" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                <p>
+                  Open tab separated text file (gzipped or plain text) in BED converter. Several rows of the file appears on the table. Select correct header description for the columns.
+                  Some columns may have been selected automatically. You must select at least "Chromosome", "Start" and "End" columns for BED conversion. Optional fields are "Name", "Score" and "Strand".
+                  Only selected files are added to processed BED file.
+                  <br>
+                  KUVA
           <h2 id="varmanager">Variant Manager</h2>
           <img src="images/varmanager.png" style="width:70%;">
           <p>
