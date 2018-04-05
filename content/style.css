@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("images/Roboto-Regular.ttf");
+}
 html {
     height: 100%;
 }
