@@ -12,13 +12,58 @@
         <div class="bottom content">
 
 <h1 id="varanalysis">Variant Analysis</h1>
+
 <h2 id="filtering">Variant quality Filtering</h2>
-  <h3>Basic filters</h3>
-  <h3>Advanced filters</h3>
-  Hard filters
-  <h3>Indel filtering</h3>
-  Repeat file...
-  own tab...
+  Variant quality filtering is operated in <a href="ui.html#varmanager">Variant Manager</a>.
+  <h3 id="basic">Basic filters</h3>
+  Use SNVs tab of the <a href="ui.html#varmanager">Variant Manager</a> to apply basic filtering for SNVs and indels.
+  These values are read from the opened VCF files and can be used interactively with the variant visualization.
+  <br><br>
+  The basic filters include:
+  <ul>
+    <li><h4>Min. quality score</h4></li>
+    <ul>
+      <li>This value corresponds to the QUAL field of the VCF file.</li>
+    </ul>
+    <li><h4>Min. genotype quality score</h4></li>
+    <ul>
+      <li>This value corresponds to the GQ field of the VCF file.</li>
+    </ul>
+    <li><h4>Min. coverage</h4></li>
+    <ul>
+      <li>This value corresponds to the DP field (or AD) of the VCF file.</li>
+    </ul>
+    <li><h4>Max. coverage</h4></li>
+    <ul>
+      <li>This value corresponds to the DP field (or AD) of the VCF file.</li>
+    </ul>
+    <li><h4>Min/max allelic fraction</h4></li>
+    <ul>
+      <li>This value corresponds to the AD field of the VCF file.</li>
+    </ul>
+  </ul>
+  <h3 id="indel">Indel filtering</h3>
+  To use separate quality filters for indels, go to Indels tab of <a href="ui.html#varmanager">Variant Manager</a> and check "Use indel specific filters".
+  <br><br>
+  If you are using controls, right click the control track and select "Overlap indels" to exclude all overlapping indels found in the control file.
+  <br><br>
+  We offer repeat region BED files for GRCh37 in <a target="_blank" href="https://baseplayer.fi/tracks/repeats_GRCh37/">https://baseplayer.fi/tracks/repeats_GRCh37/</a>.
+  You can open these files for your project and select "Subtract" from the track options to exclude indels in microsatellite regions.
+  
+  <h3 id="advanced">Advanced filters</h3>
+  If your VCF files have been created by GATK's HaplotypeCaller, you have additional quality parameters for variant filtering. See this post for more information about the
+  parameters and suggested threshold values for quality filtering: <a target="_blank" href="https://gatkforums.broadinstitute.org/gatk/discussion/2806/howto-apply-hard-filters-to-a-call-set">
+  https://gatkforums.broadinstitute.org/gatk/discussion/2806/howto-apply-hard-filters-to-a-call-set</a>
+  <br><br>
+  Access additional filter window by clicking the "Min. quality score:" text at the <a href="ui.html#varmanager">Variant Manager</a> SNVs or Indels tabs.
+  <br>
+  KUVA ASETUKSISTA JOTKA LINKISSÄ
+  <br>
+  In the picture, suggested values from the above link have been set. Note: FS value have less than "<" symbol changed to more than ">",
+  which means that all variants having FS value greater than (60 in this case), is excluded.
+
+
+
 <h2 id="familial">Familial</h2>
 <h3 id="inheritance">Inheritance patterns</h3>
 Download <a target="_blank" href="https://www.nature.com/articles/sdata201625">"Ashkenazim Trio"</a> example data for inheritance analyses (GRCh37) by using links below:<br>
