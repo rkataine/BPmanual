@@ -1,5 +1,5 @@
 <div class="top-left">
-<img src="images/bp_icon.svg">
+<img src="images/bp_icon.svg" width="50px">
 </div>
 
 <nav class="bottom sidebar" id="side">
@@ -106,12 +106,7 @@
   var buttons = document.getElementsByClassName("main");
 
   var urllocation = location.href;
-  var hashindex = urllocation.indexOf("#")+1;
-   if(hashindex > -1){
-        document.getElementById(urllocation.substring(hashindex)).scrollIntoView(true);
-       //window.location = urllocation.substring(hashindex);
-       //window.alert(urllocation.substring(hashindex+1));
-    }
+
   for(var i =0;i<buttons.length;i++) {
     if(buttons[i].href) {
       if(buttons[i].href.includes(lastPathSegment)) {
@@ -128,6 +123,17 @@
       }
     }
   }
+  var hashindex = urllocation.indexOf("#")+1;
+   if(hashindex > 0){
+     //document.getElementById(urllocation.substring(hashindex)).scrollIntoView(true);
+    var element_to_scroll_to = document.getElementById(urllocation.substring(hashindex));
+        //
+        $(document).ready(function() {
+          element_to_scroll_to.scrollIntoView();
+
+        });
+      
+    }
   /*$nav = $("#nav");
   //hide all but the first sub list
   $nav.find("ul:not(:first)").hide();
