@@ -106,9 +106,10 @@
   var buttons = document.getElementsByClassName("main");
 
   var urllocation = location.href;
-  var hashindex = urllocation.indexOf("#");
+  var hashindex = urllocation.indexOf("#")+1;
    if(hashindex > -1){
-       window.location = urllocation.substring(hashindex);
+        document.getElementById(urllocation.substring(hashindex)).scrollIntoView(true);
+       //window.location = urllocation.substring(hashindex);
        //window.alert(urllocation.substring(hashindex+1));
     }
   for(var i =0;i<buttons.length;i++) {
