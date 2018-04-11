@@ -127,7 +127,12 @@ a.selected {
     overflow-y: auto;  /*adds scroll to this container*/
     max-width: 800px;
 }
+p {
+  padding-left: 40px;
+  padding-right: 40px;
+}
 .content {
-  padding-left: 10px;
+  margin-left: 10px;
+
   font-size: 14px;
 }

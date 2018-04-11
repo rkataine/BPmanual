@@ -14,11 +14,13 @@
 <h1 id="varanalysis">Variant Analysis</h1>
 
 <h2 id="filtering">Variant quality Filtering</h2>
-  Variant quality filtering is operated in <a href="ui.html#varmanager">Variant Manager</a>.
+  <p>Variant quality filtering is operated in <a href="ui.html#varmanager">Variant Manager</a>.</p>
   <h3 id="basic">Basic filters</h3>
+  <p>
   Use SNVs tab of the <a href="ui.html#varmanager">Variant Manager</a> to apply basic filtering for SNVs and indels.
   These values are read from the opened VCF files and can be used interactively with the variant visualization.
-  <br><br>
+  </p>
+  <p>
   The basic filters include:
   <ul>
     <li><h4>Min. quality score</h4></li>
@@ -42,14 +44,17 @@
       <li>This value corresponds to the AD field of the VCF file.</li>
     </ul>
   </ul>
+  </p>
   <h3 id="indel">Indel filtering</h3>
+  <p>
   To use separate quality filters for indels, go to Indels tab of <a href="ui.html#varmanager">Variant Manager</a> and check "Use indel specific filters".
+  </p>
   <br><br>
   If you are using controls, right click the control track and select "Overlap indels" to exclude all overlapping indels found in the control file.
   <br><br>
   We offer repeat region BED files for GRCh37 in <a target="_blank" href="https://baseplayer.fi/tracks/repeats_GRCh37/">https://baseplayer.fi/tracks/repeats_GRCh37/</a>.
   You can open these files for your project and select "Subtract" from the track options to exclude indels in microsatellite regions.
-  
+
   <h3 id="advanced">Advanced filters</h3>
   If your VCF files have been created by GATK's HaplotypeCaller, you have additional quality parameters for variant filtering. See this post for more information about the
   parameters and suggested threshold values for quality filtering: <a target="_blank" href="https://gatkforums.broadinstitute.org/gatk/discussion/2806/howto-apply-hard-filters-to-a-call-set">
@@ -82,6 +87,34 @@ for read visualization, the BAM files are available at:<br>
 <p>
 
 <h1 id="readanalysis">Read analysis</h1>
+<p>
+Read analysis requires aligned BAM or CRAM files with index.
+<h2 id="validation">Variant validation</h2>
+<p>
+Variant quality metrics in VCF files are assessed by the used variant caller. Although the false positive rates of variant
+calls have decreased as methods have improved, read level inspection of variant calls and flanking regions are required in
+most cases. The integrated variant analysis and visualization in BasePlayer enables rapid workflow for variant validation
+ - double-clicking the specific sample in the result table zooms in to the variant locus and expands the sample track. Reads
+ appear on the sample track. Read  level zoom enables user to inspect qualities, orientation, and mismatch rates of the
+ overlapping and surrounding reads. In  addition, the reference sequence and annotation tracks, such as repeat masker and
+ mappability track, provide additional information about the variant calls.
+</p>
+<h2 id="svs">Structural variant analysis</h2>
+Structural variants break points can be analyzed by inspecting discordant and splitted reads at the break point locus. BasePlayer
+groups discordant reads at the bottom to facilitate the analysis. The colors of the reads corresponds to either different kind of
+structural variant or chromosome color of the discordant read pair (in case read pairs have been mapped in different chromosomes).
+<p>
+Colors:
+
+<p>
+Click read to view more information about the read.
+
+<p>
+Double click read to see its pair. In case of discordant read, the BasePlayer screen is splitted. You can split the screen as many times as
+the monitor width allows.
+<h2 id="rna">RNA data</h2>
+<h2 id="long">Long read analysis (3rd generation sequencing)</h2>
+<h2 id="coverage">Coverage calculations</h2>
 </div>
 </div>
 <script>
