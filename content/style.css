@@ -104,7 +104,7 @@ li.mainlist {
 
 }
 ul a {
-  text-decoration: none;
+  #text-decoration: none;
 }
 a.main {
   font-weight: bold;

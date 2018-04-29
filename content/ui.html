@@ -22,17 +22,98 @@
           in non-coding region). Height is relative to the sequencing coverage at the variant locus.
         </p>
           <h2 id="toolbar">Toolbar</h2>
+            <a href="images/toolbar.png"><img src="images/toolbar.png" ></a>
+            <ol>
+              <li>File open, additional tool, variant manager and help menus</li>
+              <li>Change chromosome</li>
+              <li>Go to previous location (back/forward buttons)</li>
+              <li>Search bar. Search by position (e.g. 4:5306600) or search by gene name or ENSG code</li>
+              <li>Zoom back to chromosomal level</li>
+              <li>Current view region (start and end position of the screen)</li>
+              <li>Current view length</li>
+            </ol>
             <h3 id="filemenu">File menu</h3>
-            <img src="images/filemenu.png" style="width:25%"><br>
-            <img src="images/pasteurl.png" style="width:50%">
+            <table>
+              <tr>
+                  <td width="30%" align="left" valign="top"><img src="images/filemenu.png" style="width:100%"></td>
+                  <td align="left" valign="top">
+                    <ul>
+                      <li>Add VCFs
+                        <p>
+                        Open <a href="filetypes.html#vcf">VCF files</a> (vcf.gz preferrably with tabix index file ".vcf.gz.tbi"). Variants will open to <a href="#sampletrack">sample tracks</a>.
+                        If BAM file is located at the same directory and has the same name, it will be opened at the same track.
+                        Reads will appear when <a href="#samplezoom">zoomed in</a> (view length less than 60kbp)
+                        </p>
+                      </li>
+                      <li>Add BAMs
+                        <p>
+                        Open <a href="filetypes.html#bam">BAM and CRAM files</a> (index files required (.bam.bai or .cram.crai)). Reads will open to <a href="#sampletrack">sample tracks</a>.
+                        Reads will appear when <a href="#samplezoom">zoomed in</a> (view length less than 60kbp). Coverage will be drawn at the zoom distance set in the <a href="#general">settings</a> (default 1Mbp).
+                        </p>
+                      </li>
+                      <li>Add tracks
+                        <p>
+                          Open track files (BED, BigWig, BigBed, GFF, TSV, txt)</a>. Read more about track files from the <a href="#annotrack">Region/annotation tracks</a> section
+                        </p>
+                      </li>
+                      <li>Add controls (<span style="color:red;">muuta ohjelmaan pieni kirjain</span>)
+                        <p>
+                        Open control files (single or multi VCF). Control file will open to <a href="#controltrack">Control track</a>.
+                        </p>
+                      </li>
+                      <li>Add track from URL
+                        <p>
+                        Open track files from external server. Paste ftp or http address to the URL field (see image below) and press "Fetch".
+
+                      </li>
+                      <img src="images/pasteurl.png" style="width:70%">
+                      <br>
+
+                    </ul>
+                  </td>
+              </tr>
+            </table>
+            <ul>
+            <li>Open/save project
+              <p>
+                Open and save BasePlayer projects (.ses).
+              </p>
+            </li>
+            <li>Genomes
+              <p>
+                Change and add new genomes (opens the <a href="#genomeselect">Genome selector</a>)
+              </p>
+            </li>
+            <li>Update
+              <p>
+                Update BasePlayer. The button is visible only when updates are available.
+                It is also possible to update BasePlayer manually by downloading BasePlayer.jar from
+                <a href="https://baseplayer.fi/update">https://baseplayer.fi/update</a>.
+              </p>
+            </li>
+            <li>Clear data
+              <p>
+                Clears all opened samples, tracks and controls.
+              </p>
+            </li>
+            <li>Exit
+              <p>
+              Closes BasePlayer.
+              </p>
+            </li>
+          </ul>
+            <br>
+
             <h3 id="tools">Tools</h3>
               <h4 id="tbrowser">Table browser</h4>
                 <a href="images/tablebrowser2.png"><img style="width:100%" src="images/tablebrowser2.png"></a>
                 <br>
                 <a href="images/tablebrowser.png"><img style="width:100%" src="images/tablebrowser.png"></a>
 
-              <h4 id="average">Coverage manager</h4>
+              <h4 id="average">Coverage calculator</h4>
+              <a href="images/coveragecalc.png"><img src="images/coveragecalc.png" ></a>
               <h4 id="caller">Variant caller</h4>
+              <a href="images/varcaller.png"><img src="images/varcaller.png" style="width:25%"></a>
               <h4 id="BEDconvert">BED converter</h4>
                 <p>
                 BED converter is a tool, which allows user to import external annotation data, which is not in standard format (BED, BigWig, GFF etc.), to BasePlayer.
@@ -57,10 +138,32 @@
           <a href="images/chromzoom.png"><img src="images/chromzoom.png" style="width:100%"></a>
           <a href="images/isoforms.png"><img src="images/isoforms.png" style="width:100%"></a>
 
+
+          <h2 id="annotrack">Region/annotation tracks</h2>
+          <a href="images/annotracks.png"><img src="images/annotracks.png" ></a>
+
+          <p>
+
+          </p>
+          <a href="images/annotracks_zoom.png"><img src="images/annotracks_zoom.png"></a>
+
+          <h2 id="controltrack">Control tracks</h2>
+          <a href="images/controltracks.png"><img src="images/controltracks.png" ></a>
+
+          <p>
+
+          </p>
+
           <h2 id="sampletrack">Sample tracks</h2>
+          <a href="images/sampletracks.png"><img src="images/sampletracks.png"></a>
+          <p>
+
+          </p>
+          <a href="images/sampletracks_zoom.png"><img id="samplezoom" src="images/sampletracks_zoom.png" ></a>
+          <br>
+          <a href="images/cohinspect.png"><img src="images/cohinspect.png" ></a>
+          <br>
           <img src="images/sampledata.png" style="width:50%">
-
-
           <h2 id="genomeselect">Genome selector</h2>
           <p>
           Genome selector appears on the first start of the BasePlayer. This tool allows you to add new reference genomes and gene annotations.
