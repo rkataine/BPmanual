@@ -296,14 +296,59 @@
           </p>
 
           <h2 id="sampletrack">Sample tracks</h2>
+          <p>
+          Sample tracks visualize VCF and BAM files. If you have BAM file named after the VCF file and those are placed in the same folder, both files will be visualized on the same track.
+          </p>
+          <p>
+          The left sidebar shows information about the visible variants on the screen:
+          <ol>
+            <li>Sample name</li>
+            Sample name is the name of the VCF or BAM file by default. You can change it in the sample data dialog (see below)
+            <li>Variants</li>
+            The number of visible variants (SNVs + indels) on the screen and indel count in parentheses
+            <li>Number of heterozygotes</li>
+            <li>Number of homozygotes</li>
+            <li>Transition / Transversion rate</li>
+            <li>Filetypes on the track</li>
+            If both VCF and BAM/CRAM is colored green, both files are visualized on the track
+            <li>Var height by...</li>
+            Variant height on the screen indicates the coverage (by default) at the variant locus. You can change the height determinant from the <a href="#variants">"Settings -> Variants"</a>
+            The maximum height value of visible variants is shown in parentheses.
+          </ol>
+          </p>
           <a href="images/sampletracks.png"><img src="images/sampletracks.png"></a>
           <p>
-
+          Every vertical line on the sample track represents a line of the VCF file (variant call). Red and green lines indicate coding SNVs and indels, respectively. Intronic variants are light gray and intergenic dark gray.
+          Variants are visible, if they pass all the filters set in the "Variant Manager" and have not been filtered out by applied control or region tracks.
+          <br>
+          <br>
+          On the above screenshot, the bottom track visualizes ClinVar data and is used as an annotation (yellow indicator on the sidebar).
           </p>
           <a href="images/sampletracks_zoom.png"><img id="samplezoom" src="images/sampletracks_zoom.png" ></a>
-          <br>
+          <p>
+          If you zoom in to the sequence level (image above), the reads are visualized from the corresponding BAM file. At the top of each track is the coverage track,
+          which shows position specific coverage and possible mismathes read from the read data.
+          The variant call from VCF is shown behind the reads (red line in the image).
+          </p>
           <a href="images/cohinspect.png"><img src="images/cohinspect.png" ></a>
-          <br>
+          <p>
+          To get more information about the individual reads or variants, you can click them at the sequence level zoom (above image).
+          Click the variant to view the VCF information popup, which shows the VCF line information as is.<br>
+          Click the read one time to view the BAM information popup:
+          <ol>
+          <li>Read name</li>
+          <li>Chromosomal position and strand (in parentheses)</li>
+          <li>Mapping quality (phred scale; 60 is typically maximum value)</li>
+          <li>Insert size</li>
+          Insert (or fragment) size is inferred from the paired end reads. It is the distance between the start position of the first read and the end position of the second read.
+          The number is negative for the second read pair.
+          <li>Cigar string contains information about the indels and clipped parts of the read</li>
+          <li>Read length</li>
+          <li>Chromosomal position of the mate (or pair) and its orientation</li>
+          <li>Indicator, whether the read is primary alignment.</li>
+          </ol>
+          See more read visualization features at <a href="analysis.html#long">3rd generation sequencing data analysis</a>
+          </p>
           <img src="images/sampledata.png" style="width:50%">
           <h2 id="genomeselect">Genome selector</h2>
           <p>
