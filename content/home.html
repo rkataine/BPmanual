@@ -13,7 +13,21 @@
           BasePlayer enables tightly integrated comparative variant analysis and visualization of thousands of next generation sequencing (NGS) data samples and millions of variants. BasePlayer is a highly efficient and user-friendly software for biological discovery in large-scale NGS data. It transforms an ordinary desktop computer into a large-scale genomic research platform, enabling also a non-technical user to perform complex comparative variant analyses, population frequency filtering and genome level annotations under intuitive, scalable and highly-responsive user interface to facilitate everyday genetic research as well as the search of novel discoveries.
           <p>
           <img src="images/Schema.png" style="width:90%">
-
+          <h2 id="started">Getting started</h2>
+    <ol>
+      <li>Make sure you have Java jre 1.7 or newer installed. Note: OpenJDK "9-Ubuntu" has issues with autoupdate.</li>
+      <li>BasePlayer can be updated automatically at "File > Update" or manually by downloading BasePlayer.jar from https://baseplayer.fi/update/</li>
+      <li>Download the BasePlayer and unzip/install it to any location with enough hard-disk space (e.g. in the human studies, the reference genome size is ~3GB)</li>
+      <li>When using "BasePlayer portable package", click Launcher.jar (in unix you need jar-launcher and Launcher.jar must have executable rights.) Alternatively click BasePlayer.jar (may not allocate enough memory for the software)</li>
+      <li>Start the software with the BasePlayer launcher file (e.g. BasePlayer.exe) if you have used the installer.</li>
+      <li>If nothing happens, go to console/shell/command prompt and to your BasePlayer directory. Type: java -Xmx1200m -jar BasePlayer.jar</li>
+      <li>Download preferred reference genome from the genome selection menu, which appears on the first start.</li>
+      <li>You can allocate more memory for BasePlayer by editing the baseplayer_config.txt file in your home directory. e.g. MemoryLimit=1200m -> MemoryLimit=4G. Use Launcher.jar to apply the change.</li>
+      <li>Use BasePlayer.vmoptions file in the BasePlayer directory for memory allocation if installer is used</li>
+    </ol>
+    <p>
+      Please, see the installation video at: <iframe width="560" height="315" src="https://www.youtube.com/embed/QnVXlmkVxfs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </p>
           <h2 id="citeus">Cite us</h2>
           A pre-print describing BasePlayer is available at bioRxiv:<br>
           Katainen <em>et al.</em>,

@@ -56,7 +56,7 @@
                           Open track files (BED, BigWig, BigBed, GFF, TSV, txt)</a>. Read more about track files from the <a href="#annotrack">Region/annotation tracks</a> section
                         </p>
                       </li>
-                      <li>Add controls (<span style="color:red;">muuta ohjelmaan pieni kirjain</span>)
+                      <li>Add controls
                         <p>
                         Open control files (single or multi VCF). Control file will open to <a href="#controltrack">Control track</a>.
                         </p>
@@ -106,14 +106,89 @@
 
             <h3 id="tools">Tools</h3>
               <h4 id="tbrowser">Table browser</h4>
+                <p>
+                  Table Browser is a tool for fast browsing through the genome. It is particularly useful when validating break points of the structural variants or the quality of variant calls.
+                  You can open any tab separated file (gzipped or raw text file) with the chromosomal position information. Double clicking the position will take user
+                  to the selected locus and visualize the data.
+                </p>
                 <a href="images/tablebrowser2.png"><img style="width:100%" src="images/tablebrowser2.png"></a>
-                <br>
-                <a href="images/tablebrowser.png"><img style="width:100%" src="images/tablebrowser.png"></a>
+                <p>
+                  On above example, BasePlayer output is opened for visual validation of candidate variants.
+                  User can select from the user interface (dropdown menus at the table header), which column corresponds to which information
+                  Options for header values are:
+                  <ol>
+                    <li>Position</li>
+                    Use this selector, when there is chromosome and position on the same column (e.g. BasePlayer output above; 3:24,446,246)
+                    <li>Chromosome</li>
+                    When chromosome is on its own column, use this selector.
+                    <li>Start</li>
+                    If the file has a separate column for chromosome and position(s) use this selector for start position (Figure below).
+                    <li>End</li>
+                    If the file has a separate column for chromosome and regional (start/end) positions use this selector for end position (Figure below).
+                    <li>Sample</li>
+                    If the file contains positions for multiple samples select this header value for the column containing sample names. BasePlayer will expand
+                    the selected sample when the position is double clicked (Figure above).
+                    <li>Gene</li>
+                    If the file contains gene names, double clicking the "Gene" column will zoom in to the selected gene (Figure above).
+                    <li>Editable</li>
+                    This column value marks the column as "Editable", which allows user to edit the table values. The last column is automatically set as Editable,
+                    where user can write the validation status of the variant, for example.
+                  </ol>
+                    <a href="images/tablebrowser.png"><img style="width:100%" src="images/tablebrowser.png"></a>
+                  In case you have edited the table, use "Write" button to save the changes.<br>
+                  See demonstration video of the usage of "Table Browser" at: <br><iframe width="560" height="315" src="https://www.youtube.com/embed/KBfLZtKvdyw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </p>
+
+
 
               <h4 id="average">Coverage calculator</h4>
+              <p>
+              Use this tool to get coverage information from the opened BAM files. First, open BAM files as sample tracks "File -> Add BAMs".
+              Open "Coverage Calculator" and open BED file containing e.g. targeted regions which will be used in coverage calculation.
+              If you have only a few regions in the BED file, check the "Small region" checkbox for faster processing.
+              Press "Execute" to start the calculation.
+              </p>
               <a href="images/coveragecalc.png"><img src="images/coveragecalc.png" ></a>
+              Column explanations:
+              <ol>
+                <li>Sample</li>
+                Sample name
+                <li>Average coverage</li>
+                Average coverage of the BAM file in opened BED file regions
+                <li>Average mapping quality</li>
+                Average mapping quality of the reads in the BAM file
+                <li>Soft clip rate</li>
+                Proportion of the reads having soft clips (<a href="https://www.biostars.org/p/119537/">https://www.biostars.org/p/119537/</a>)
+                <li>Zero quality rate</li>
+                Proportion of reads having a mapping quality of zero
+                <li>Covered (%) (Coverage : Percentage)</li>
+                Indicates the proportion of covered regions out of all regions at different coverage levels. I.e.
+                "5 : 63" means that if the opened region BED file have total length of 100,000bp, 63% of the total region (63,000bp) have
+                been covered at least with 5 reads. The last value e.g. "10+ : 48%" means that 48% of the regions have been covered with at least ten overlapping reads.
+                <li>Status</li>
+                Shows the progress of the coverage calculation
+              </ol>
               <h4 id="caller">Variant caller</h4>
+              <p>This is the test version of a simple variant caller, which you can use for BAM files in case you do not have VCF files available.</p>
               <a href="images/varcaller.png"><img src="images/varcaller.png" style="width:25%"></a>
+              <ol>
+              <li>Min. alt-read count</li>
+              Minimum read count for the alternative base calling reads / how many reads are required for the variant call
+              <li>Min. coverage</li>
+              Minimum total coverage of the locus to be used in variant calling
+              <li>Min. mapping quality</li>
+              Minimum mapping quality of the reads, which are used in variant calling
+              <li>Min. base quality</li>
+              Minimum base quality of the mismatched base in the read to be used in the calling
+              <li>Require both strands</li>
+              Base is called only if both forward and reverse strand reads call the same variant
+              <li>Require multiple runs</li>
+              In case the used BAM file contains reads from different runs, require that the variant is present in all runs (possibly eliminates run specific errors)
+              <li>Calc only for selected</li>
+              Calculate variants only for the selected sample (click sidebar of the sample track to select a sample)
+              <li>Before annotation</li>
+              Start the variant calling after the "Annotation" is pressed in the "Variant Manager"
+              </ol>
               <h4 id="BEDconvert">BED converter</h4>
                 <p>
                 BED converter is a tool, which allows user to import external annotation data, which is not in standard format (BED, BigWig, GFF etc.), to BasePlayer.
@@ -131,27 +206,93 @@
                   <a href="images/BEDconvert.png"><img style="width:100%" src="images/BEDconvert.png"></a>
 
           <h2 id="genomebar">Genome bar</h2>
+          <p>
+          The genome bar visualizes the opened reference sequence, cytobands (at least for humans and mice) and genes. At the whole chromosome level zoom,
+          genes which have a screen length more than 1 pixel are named and aligned on different (y-coordinate) levels. I.e. the more you zoom, the more
+          genes are visible.
+          </p>
+
           <a href="images/genomebar.png"><img src="images/genomebar.png" style="width:100%"></a>
           <p>
 
+          Left Sidebar contains label for the selected chromosome, dropdown menus for selecting the reference genome / gene annotation, and current memory usage out of the total memory allocated for BasePlayer.
+          You can use the dropdown menus to add new annotations and reference sequences as well.
+          </p>
+          <p>
+          The current location of the screen is visualized on top of the cytoband with the red border. You can jump easily to the desired region by dragging mouse on top of the cytoband.
+          Centromere is indicated as red triangles.
           </p>
           <a href="images/chromzoom.png"><img src="images/chromzoom.png" style="width:100%"></a>
+          <p>
+          On the figure above, the last exon of the gene APC is shown. Reference sequence and aminoacids are visible at this zoom level. In addition,
+          variants of the all opened samples are collapsed into this view (red and green bars) showing also the amino acid change or the indel effects in place.
+          <br>
+          <br>
+          Tip: drag mouse on top of the reference genome to copy the sequence to clipboard. You can then paste (ctrl-v) the sequence to external software.
+          <br>
+          Tip2: right click the genome bar screen to copy the position to clipboard.
+          </p>
           <a href="images/isoforms.png"><img src="images/isoforms.png" style="width:100%"></a>
+          <p>
+            On the figure above, the DCP2 gene and its isoforms are shown. Right click any exon of the gene to expand the isoforms (if available). By default, longest transcript is shown.
+            Click the exon for more information of the gene and exon. click ENSG or ENST code to open Ensembl page for the gene or specific transcript. Click "View in GeneCards" to see the webpage for selected gene.
 
+          </p>
 
           <h2 id="annotrack">Region/annotation tracks</h2>
+          <p>
+          The region track visualizes opened region files (BED, BigWig etc.). The track is also used to annotate or filter opened variants.
+          Open region files in "File -> Add tracks". The "Play" button appears to the left sidebar when there are opened VCFs on the sample tracks.
+          If region file containts values, the "Histogram" button appears on the sidebar. The region height is determined by its value, when the Histogram view is selected. In case of negative and positive values,
+          region track is splitted vertically, zero value in the middle, negative values as red. The scale of the view is shown at the bottom left corner of the track.
+          </p>
           <a href="images/annotracks.png"><img src="images/annotracks.png" ></a>
 
           <p>
-
+          If the region track file is larger than set in the <a href="#general">Settings" -> "General" -> "Big file size for tracks (MB)"</a>, the track is visualized,
+          when zoomed in closer than set in <a href="#general">"Settings" -> "General" -> "Processing window size (bp)"</a>.
+          </p>
+          <p>
+          Right click the track or left click the cogwheel symbol to open the track settings:
+          <ol>
+          <li>Intersect</li>
+          If "Play button" is pressed i.e. track is applied and intersect is selected, variants outside the regions are excluded / hidden. If not checked,
+          no variants are excluded, but are still annotated for the overlapping occurrences.
+          <li>Subtract</li>
+          If track is applied and subtract is selected, variants inside the regions are excluded / hidden.
+          <li>Zero based</li>
+          If start and end positions in the file are not reported starting from zero, uncheck this checkbox and the positions will be shifted accordingly.
+          <li>Log scale</li>
+          Change the histrogram view to log scale
+          <li>Auto scale (in histogram view)</li>
+          Scale the peak heights by the highest/lowest value on the screen
+          <li>Auto collapse (in region view)</li>
+          Collapse and expand track regions as zoomed in/out
+          <li>Report affinity changes</li>
+          If the track file has a name-field recognized as a transcription factor, affinity changes will be reported on the results if this checkbox is selected
+          <li>Apply in annotation</li>
+          In case the track file is big ("Settings -> General"), it is annotated using the window size set in the settings and may take a while to complete.
+          Use this checkbox to apply the track automatically after the "Variant Manager" -> "Annotation" is pressed.
+          <li>Value limit</li>
+          Use only regions of the track file, which have higher than the set value
+          <li>Left vertical slider</li>
+          When not in histogram view, use the slider to set the region bar height
+          </ol>
           </p>
           <a href="images/annotracks_zoom.png"><img src="images/annotracks_zoom.png"></a>
-
-          <h2 id="controltrack">Control tracks</h2>
-          <a href="images/controltracks.png"><img src="images/controltracks.png" ></a>
-
           <p>
-
+          If the track file is recognized to include transcription factor binding sites by the "Name" column, binding motifs are visualized at the sequence level zoom.
+          </p>
+          <h2 id="controltrack">Control tracks</h2>
+          <p>
+          The control track allows user to apply and set options for control files. Open VCFs for this track in "File -> Add controls". The track will appear above the sample tracks.
+          Set the allele frequency limit for the control file. When track is applied, variants having allele frequency more than the limit will be excluded / hidden. Set the limit value to "1"
+          for only annotation of variants. Right click the control track to select specialized controlling for indels "Overlap indels". Indels are excluded if the control file have
+          overlapping indel at that locus. Otherwise exact match is required for the indel to be filtered out.
+          </p>
+          <a href="images/controltracks.png"><img src="images/controltracks.png" ></a>
+          <p>
+          Open control file as a sample for the visualization of the file. In upcoming versions, variants will be visualized in the control track when zoomed in.
           </p>
 
           <h2 id="sampletrack">Sample tracks</h2>
