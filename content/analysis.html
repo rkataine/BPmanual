@@ -62,7 +62,7 @@
   <br><br>
   Access additional filter window by clicking the "Min. quality score:" text at the <a href="ui.html#varmanager">Variant Manager</a> SNVs or Indels tabs.
   <br>
-  KUVA ASETUKSISTA JOTKA LINKISSÄ
+
   <br>
   In the picture, suggested values from the above link have been set. Note: FS value have less than "<" symbol changed to more than ">",
   which means that all variants having FS value greater than (60 in this case), is excluded.
@@ -83,9 +83,33 @@ for read visualization, the BAM files are available at:<br>
 <a target="_blank" href="ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/HG003_NA24149_father/NIST_Stanford_Illumina_6kb_matepair/bams/">Father BAM</a>,
 <a target="_blank" href="ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/HG004_NA24143_mother/NIST_Stanford_Illumina_6kb_matepair/bams/">Mother BAM</a><br>
 <br>Find more information about the samples here <a target="_blank" href="https://www.nature.com/articles/sdata201625">https://www.nature.com/articles/sdata201625</a>
+<br><br>
+You can use compare panel to compare variants between family members or inheritance panel for more specified results (requires at least one sample to be set as an affected).
+<br><br>
+See the video for example analysis at our <a href="https://www.youtube.com/channel/UCywq-T7W0YPzACyB4LT7Q3g"> Youtube channel</a>: "Familial variant study with BasePlayer"
+<br><br>
+<b>Suggested tracks for exome analysis:</b><br>
+mcap_v1_0_forBP.bed.gz in <a href="https://baseplayer.fi/tracks/">https://baseplayer.fi/tracks/</a><br>
+<b>Suggested controls for exome analysis:</b><br>
+gnomAD_exomes_ALL_GRCh37.vcf.gz in <a href="https://baseplayer.fi/controls/">https://baseplayer.fi/controls/</a><br>
+<br><b>Suggested tracks for whole-genome analysis:</b><br>
+Encode_Combined_Gm12878_H1hesc_Helas3_Hepg2_Huvec_K562.bed.gz in <a href="https://baseplayer.fi/tracks/">https://baseplayer.fi/tracks/</a>
+<br>
+GERP_hg19.bw in <a href="https://baseplayer.fi/tracks/">https://baseplayer.fi/tracks/</a>
+<br>
+Mappability_1000Genomes_pilot_mask.bed.gz in <a href="https://baseplayer.fi/tracks/">https://baseplayer.fi/tracks/</a>
+<br>
+TFbinding_sites_SELEX_GRCh37.bed.gz in <a href="https://baseplayer.fi/tracks/">https://baseplayer.fi/tracks/</a><br>
+<b>Suggested controls for whole-genome analysis:</b><br>
+gnomAD_genomes_ALL_GRCh37.vcf.gz in <a href="https://baseplayer.fi/controls/">https://baseplayer.fi/controls/</a>
+<br>
+
 <h2 id="somatic">Somatic</h2>
 <p>
-
+  In somatic studies you can use the filters, tracks and comparison panel as in familial cases.
+  <br>
+  See example video of a whole-genome somatic variant analysis at our <a href="https://www.youtube.com/channel/UCywq-T7W0YPzACyB4LT7Q3g">Youtube channel</a>: "Somatic cluster analysis demonstration with BasePlayer"
+</p>
 <h1 id="readanalysis">Read analysis</h1>
 <p>
 Read analysis requires aligned BAM or CRAM files with index.
@@ -99,22 +123,44 @@ most cases. The integrated variant analysis and visualization in BasePlayer enab
  overlapping and surrounding reads. In  addition, the reference sequence and annotation tracks, such as repeat masker and
  mappability track, provide additional information about the variant calls.
 </p>
+<a href="images/cohinspect.png"><img src="images/cohinspect.png" ></a>
 <h2 id="svs">Structural variant analysis</h2>
+<p>
 Structural variants break points can be analyzed by inspecting discordant and splitted reads at the break point locus. BasePlayer
 groups discordant reads at the bottom to facilitate the analysis. The colors of the reads corresponds to either different kind of
 structural variant or chromosome color of the discordant read pair (in case read pairs have been mapped in different chromosomes).
-<p>
-Colors:
+Concordantly mapped read pairs are colored as light green and red (forward and reverse strand).
+</p>
+<a href="images/structural.png"><img src="images/structural.png" ></a>
 
+<p>
+On the above image, there is a LINE1 element at the left side of the left panel. Reads appear as dark, as the mapping quality is lower than set in the settings.
+Colorful reads at adjacent to dark reads represents discordant reads, whose pair is aligned to different chromosome (color is determined by the pair's chromosome).
+Double click discordant read to split the screen between the different chromosomes. You can split the screen as many times as
+the monitor width allows. <br><br> At the right panel, there is a visible break point (mismatches in reads and in the coverage track).
+</p>
 <p>
 Click read to view more information about the read.
-
-<p>
-Double click read to see its pair. In case of discordant read, the BasePlayer screen is splitted. You can split the screen as many times as
-the monitor width allows.
+</p>
 <h2 id="rna">RNA data</h2>
+To be added...
 <h2 id="long">Long read analysis (3rd generation sequencing)</h2>
-<h2 id="coverage">Coverage calculations</h2>
+<p>
+Thousands of base pairs long reads are non-trivial to visualize, as a single read can span multiple genomic breakpoints,
+or multiple exons in the case of RNA data. BasePlayer recognizes long-read data, and makes a reasonable effort to present
+it properly. For instance, the researcher can divide the main screen between distinct genomic loci by double clicking a
+read that has been mapped to multiple locations (figure below). A demonstration video on how to visualize long-read data in
+BasePlayer can be viewed at the BasePlayer <a href="https://www.youtube.com/channel/UCywq-T7W0YPzACyB4LT7Q3g">Youtube channel</a>: 
+"Third-generation sequencing data visualization with BasePlayer"
+</p>
+<a href="images/Nanopore.png"><img src="images/Nanopore.png" ></a>
+<p>
+Three split views of the long read are shown,
+tracking the split mappings for a single long read.
+An inset info panel shows information on the selected read and a schematic illustration of
+split read orientations.
+</p>
+
 </div>
 </div>
 <script>

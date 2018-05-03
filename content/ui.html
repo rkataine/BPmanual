@@ -64,7 +64,7 @@
                       <li>Add track from URL
                         <p>
                         Open track files from external server. Paste ftp or http address to the URL field (see image below) and press "Fetch".
-
+                      </p>
                       </li>
                       <img src="images/pasteurl.png" style="width:70%">
                       <br>
@@ -349,7 +349,57 @@
           </ol>
           See more read visualization features at <a href="analysis.html#long">3rd generation sequencing data analysis</a>
           </p>
-          <img src="images/sampledata.png" style="width:50%">
+          <p>
+          Right click the sidebar, or click the sample name on the sidebar to open "Sample data" dialog (image below):
+          </p>
+          <table>
+            <tr>
+                <td width="35%" align="left" valign="top"><img id="sampledata" src="images/sampledata.png" style="width:100%"></td>
+                <td align="left" valign="top">
+                  <ul>
+                    <li>Sample name
+                      <p>
+                        Change the track/sample name for the project
+                      </p>
+                    </li>
+                    <li>Annotation
+                      <p>
+                        Set the variant track as an annotation track (e.g. ClinVar data VCF). Filters will not apply to annotation track
+                      </p>
+                    </li>
+                    <li>Gender
+                      <p>
+                        Select gender for the sample. If sample is set to another sample's father or mother - gender is selected automatically
+                      </p>
+                    </li>
+                    <li>Affected
+                      <p>
+                        Set sample as an affected. This information is used when using inheritance patterns in variant annotation
+                      </p>
+                    </li>
+                    <li>Mother / Father dropdowns
+                      <p>
+                        Select mother and/or father for the sample from the other opened samples.
+                      </p>
+
+                    </li>
+                    <li>Color dropdown
+                      <p>
+                        Select a distinct color for the family members (sidebar color will change)
+                      </p>
+
+                    </li>
+                    <li>VCF and BAM path
+                      <p>
+                        Full path to the directory of the opened VCF and BAM files
+                      </p>
+
+                    </li>
+                  </ul>
+                </td>
+            </tr>
+          </table>
+
           <h2 id="genomeselect">Genome selector</h2>
           <p>
           Genome selector appears on the first start of the BasePlayer. This tool allows you to add new reference genomes and gene annotations.
@@ -372,31 +422,172 @@
           <iframe style="width:50%;height:auto;" src="https://www.youtube.com/embed/bj3OR-Vi2XQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
           <h2 id="varmanager">Variant Manager</h2>
-          <img src="images/varmanager.png" style="width:70%;">
+          <a href="images/varmanager.png"><img src="images/varmanager.png" style="width:70%;"></a>
           <p>
-          <b>Variant Manager user interface and functions.</b> (<b>a</b>) Panels for variant quality filtering, variant hiding and sample-wise comparison.
-          (<b>b</b>) SNV and Indel quality filters. Separate filters for indels can be activated in the "Indels" tab - same filtering is used by default
-          for SNVs and indels. (<b>c</b>) Variant annotation panel including gene effect and output writing options. (<b>d</b>) Output table shows a list of
-          genes and variants which pass the filters set in the Variant Manager as well as any activated track. This view also includes tables for
-          variant statistics and region track annotations. (<b>e</b>) Sample-wise comparison panel. The upper slider sets the minimum number of cases which
-          must harbor a variant in the same gene for these variants to be shown. It can thus be used if the sample set consists of cases with a
-          common disease, which might not share the same specific variant even though the same gene is mutated (e.g., sporadic cases or somatic
-          mutations in cancer). Lower slider compares individual variants. For instance, the value 2/3 means that only variants shared by two or
-          three (all) samples are included and visible on the screen. "Window size for variant cluster" sets variant clustering behavior.
-          (<b>f</b>) Inheritance pattern selector. (<b>g</b>) Sample Data dialog. Change / set sample name, gender,
-          disease state and parents. (<b>h</b>) Variant Annotation options. Select desired functional classes and options for variants, which are included
-          in the results. (<b>i</b>) Output selector for variant annotation results. Select the desired output format for the result file.
+          <b>Variant Manager user interface and functions.</b>
+          <ol>
+            <li>Panels for variant quality filtering, variant hiding and sample-wise comparison</li>
+            <li>SNV and Indel quality filters. Separate filters for indels can be activated in the "Indels" tab - same filtering is used by default
+            for SNVs and indels</li>
+            <p>
+            <ol>
+              <li><b>Min. quality score:</b> filter variants by the "QUAL" field of the VCF file</li>
+              <li><b>Min. genotype quality score:</b> filter variants by the GQ field of the VCF file</li>
+              <li><b>Min. coverage:</b> filter variants by the total coverage at the variant position</li>
+              <li><b>Max. coverage: </b> filter variants if coverage exceeds this value</li>
+              <li><b>Min/max allelic fraction:</b> filter variants by the allelic fraction. Green handle for the minimum and red handle for the maximum value. e.g. remove homozygous variants by setting the max value to less than 100%.</li>
 
+            </ol>
+            </p>
+            <li>Variant annotation panel including gene effect and output writing options</li>
+            <li>Panels for annotation results for genes, clusters, statistics and annotation tracks</li>
+            <li>Result table shows a list of genes and variants which pass the filters and options set in the Variant Manager as well as any activated track.
+            Color red, yellow, green and gray indicates nonsense, missense, synonymous and non-coding variants, respectively.
+            <p>
+            Click the gene row to expand the variant view. In case multiple samples share the variant, "Multiple" is shown in the Sample column. Click the multiple row to expand the samples.
+            </p>
+            <p>
+            If controls are applied, there is column for the allele frequency in the control data, including odds ratio with the p-value (fisher exact, right tailed). Also
+            applied annotation tracks are shown in separate columns.
+            </p>
+            </li>
+          </ol>
+          <a href="images/varmanager_indel.png"><img src="images/varmanager_indel.png" style="width:70%;"></a>
+          <p>
+          Indel tab is identical to the SNV filtering panel with the exception of the "Use indel specific filters" checkbox.
+          Select the checkbox to activate the indel specific filters.
+          </p>
+          <a href="images/varmanager_hide.png"><img src="images/varmanager_hide.png" style="width:70%;"></a>
+          <p>
+          Hide panel contains checkboxes to hide / filter out variants with the provided characteristics.
+          If you have set the filters for your project and do not need to adjust them, you can check the "Freeze filters"
+          checkbox for faster loading times and lesser memory consumption. Variants, which do not pass the variant filters, will not be
+          read from the VCF file and not loaded to memory.
+          </p>
+          <a href="images/varmanager_compare.png"><img src="images/varmanager_compare.png" style="width:70%;"></a>
+          <p>
+          Use this panel to compare variants or mutated genes in multiple samples.<br>
+          The upper slider sets the minimum number of cases which
+               must harbor a variant in the same gene for these variants to be shown. It can thus be used if the sample set consists of cases with a
+               common disease, which might not share the same specific variant even though the same gene is mutated (e.g., sporadic cases or somatic
+               mutations in cancer). Lower slider compares individual variants. For instance, the value 2/3 means that only variants shared by two or
+               three (all) samples are included and visible on the screen. "Window size for variant cluster" sets variant clustering behavior.
+          </p>
+          <a href="images/varmanager_inheritance.png"><img src="images/varmanager_inheritance.png" style="width:70%;"></a>
+          <p>
+          Inheritance pattern selectors.<br>
+          If you have set affected samples from the <a href="#sampledata">"Sample data"</a> dialog, you can use inheritance patters when annotating variants.
+          </p>
+          <table>
+            <tr>
+                <td width="25%" align="left" valign="top"><img src="images/varmanager_options.png" style="width:100%"></td>
+                <td align="left" valign="top">
+                  <p>
+                  Gene annotation options. These settings affect to the variant annotation with genes.
+                  <br>
+                  <b>Only for non-synonymous:</b> do not output synonymous variants to the results<br>
+                  <b>Only truncs:</b>output only nonsense mutations<br>
+                  <b>Show intronic:</b> output intronic variants<br>
+                  <b>Show intergenic:</b> output intergenic variants<br>
+                  <b>Show UTR:</b> ouput UTR variants (including non-coding genes and RNAs)<br>
+                  <b>All chromosomes:</b> annotate automatically all chromosomes. Otherwise only visible variants on the screen are annotated<br>
+                  <b>From this chr?:</b> continue annotation from current chromosome till the end<br>
+                  <b>Only autosomes?:</b> annotate variants only for chromosomes 1-22 (in humans)<br>
+                  <b>Only selected sample?:</b> output only variants of the selected sample<br>
+                  <b>Only stats?:</b> do not output anything on the "Gene" result table. Calculate only statistics to the "Stats" table.<br>
+                  <b>Window calculation:</b> annotate variants in batches. (use settings to set the window size)<br>
+                  <b>Write directly to a file:</b> do not output anything on the result table. Pressing "Annotation" will open save file dialog for the output file.<br>
+                  </p>
+                </td>
+            <tr>
+          </table>
+          <br>
+          <table>
+            <tr>
+                <td width="25%" align="left" valign="top"><img src="images/varmanager_hardfilters.png" style="width:100%"></td>
+                <td align="left" valign="top">
+                  <p>
+                  If variants have been called e.g. with GATK HaplotypeCaller, click the "Min. quality score" text on the Variant Manager
+                  to see the "Hard filters" popup. The suggested parameters can be found at  <a target="_blank" href="https://gatkforums.broadinstitute.org/gatk/discussion/2806/howto-apply-hard-filters-to-a-call-set">
+                  https://gatkforums.broadinstitute.org/gatk/discussion/2806/howto-apply-hard-filters-to-a-call-set</a>
+                  <br>
+                  Press "Apply" to apply the hard filters.
+                  </p>
+                  <p>
+                  Note: FS parameter has "greater than" symbol set before the value.
+                  </p>
+                </td>
+            </tr>
+          </table>
+          <br>
+          <table>
+            <tr>
+                <td width="25%" align="left" valign="top"><img src="images/varmanager_output.png" style="width:100%"></td>
+                <td align="left" valign="top">
+                  <p>
+                    Set output file format.<br>
+                    <b>TSV:</b> creates tab separated output file for Excel or other software. Every variant and sample are in a separate rows.<br>
+                    <b>Compact TSV:</b> same as TSV above, but samples have been collapsed on the same row.<br>
+                    <b>VCF:</b> creates VCF file from the outputted variants.
+                    <b>Oncodrive:</b> creates a tab separated file recognized by the Oncodrive software
+                  </p>
+                </td>
+            </tr>
+          </table>
+          <br>
+          <a href="images/varmanager_stats.png"><img src="images/varmanager_stats.png" style="width:70%;"></a>
+          <p>
+          Variant statistics table.<br>
+          Includes statistics for all visible variants after annotation.<br>
           </p>
           <h2 id="settings">Settings</h2>
+          <p>
+          Open BasePlayer settings in "Tools -> Settings" or use the cogwheel symbol at the rightmost of the Toolbar
+          </p>
           <h3 id="general">General</h3>
-          <img src="images/genopts.png">
+
+          <img src="images/genopts.png" style="width:70%;">
+          <ol>
+            <li>Coverage draw distance (bp)</li>
+            Set the distance, how far the BAM file is visualized as a coverage histogram. Set it for example to 1 billion to view coverages
+            at the chromosomal level (high-coverage whole-genome data will be slow with this setting)
+            <li>Processing window size (bp)</li>
+            When handling a massive dataset without enough available memory, you can calculate and annotate variants in smaller batches (see <a href="#varmanager">"Variant Manager"</a>).
+            This value determines the window size for the batch. Also, if track file bigger than set in below field is opened, it will be visible
+            at this distance.
+            <li>Set the file size for big track files to prevent the visualization of the data at the chromosomal level. If handling e.g. 80GB file it is
+              not feasible to open and visualize the track data as a whole
+            </li>
+          </ol>
           <h3 id="variants">Variants</h3>
-          <img src="images/varopts.png">
+          <img src="images/varopts.png" style="width:70%;">
+          <p>
+            Select the characteristic of the variant, which will determine its height on the screen (default: coverage).<br>
+            <b>Coverage:</b> total coverage in variant position<br>
+            <b>Allelic Fraction:</b> a fraction of reads calling the alternative base out of total coverage (values between 0 and 1)<br>
+            <b>Quality:</b> value based on the <a href="filetypes.html#vcf">QUAL field of the VCF</a><br>
+            <b>GQ:</b> Genotype quality: value based on the <a href="filetypes.html#vcf">GQ value of VCF file</a> (not necessarily set)<br>
+            <b>Calls:</b> a nuber of reads calling the variant
+          </p>
           <h3 id="reads">Reads</h3>
-          <img src="images/readopts.png">
+          <img src="images/readopts.png" style="width:70%;">
+          <p>
+          Select options for read visualization.<br>
+          <b>Maximum insert size:</b> the insert size greater than the set value is considered as a deletion and the read is colored green <br>
+          <b>Mapping quality:</b> the read with mapping quality below the set value is colored black<br>
+          <b>Base quality:</b> mismatched bases on the read, which have base quality below the set value have dimmer color <br>
+          <b>Read depth limit:</b> reads are drawn only at the height of the set value <br>
+          <b>Show bases in sofclips:</b> BAM file may not have mismatch information for the soft clipped parts of the read. Select this checkbox to show them anyway<br>
+          </p>
           <h3 id="appearance">Appearance</h3>
-          <img src="images/appearance.png">
+
+          <img src="images/appearance.png" style="width:70%;">
+          <p>
+          Change the appearance of BasePlayer.<br>
+          <b>Font size:</b> set the preferred font size and weight used in the software<br>
+          <b>Background color:</b> set the background lightness of the region, control and sample tracks<br>
+          <b>Sidebar color:</b> set the sidebar colors using RGB values<br>
+          </p>
           <h3 id="proxy">Proxy</h3>
           <p>
           Set up your proxy settings. Check "Use proxy", select the protocol, host address and port. Finally press "Save".
