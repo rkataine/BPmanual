@@ -150,7 +150,7 @@ Thousands of base pairs long reads are non-trivial to visualize, as a single rea
 or multiple exons in the case of RNA data. BasePlayer recognizes long-read data, and makes a reasonable effort to present
 it properly. For instance, the researcher can divide the main screen between distinct genomic loci by double clicking a
 read that has been mapped to multiple locations (figure below). A demonstration video on how to visualize long-read data in
-BasePlayer can be viewed at the BasePlayer <a href="https://www.youtube.com/channel/UCywq-T7W0YPzACyB4LT7Q3g">Youtube channel</a>: 
+BasePlayer can be viewed at the BasePlayer <a href="https://www.youtube.com/channel/UCywq-T7W0YPzACyB4LT7Q3g">Youtube channel</a>:
 "Third-generation sequencing data visualization with BasePlayer"
 </p>
 <a href="images/Nanopore.png"><img src="images/Nanopore.png" ></a>
@@ -160,6 +160,48 @@ tracking the split mappings for a single long read.
 An inset info panel shows information on the selected read and a schematic illustration of
 split read orientations.
 </p>
+<h2 id="tfbinding">Transcription Factor binding sites (for advanced users)</h2>
+<p>
+BasePlayer has a built in set of transcription factor position specific scoring matrices (PSSMs), obtained from Jaspar database and
+<a href="https://www.nature.com/articles/nature15518">https://www.nature.com/articles/nature15518</a>.
+If you are analysin the data with GRCh37, you can download aligned motifs from <a href="https://baseplayer.fi/tracks/">https://baseplayer.fi/tracks/</a> (TFbinding_sites_SELEX_GRCh37.bed.gz).
+<br><br>
+The BED file has the TF name in the "Name" field, which allows BasePlayer to recognize the correct PSSM for correct alignment and visualize it in place at the region track.
+<br><br>
+<b>Option 1: download aligned motifs from Ensembl BioMart</b><br><br>
+Go to <a href="https://www.ensembl.org/">https://www.ensembl.org/</a> (make sure you go to correct version of the reference genome) and click BioMart from the header of the page.
+<br>
+Choose database -> Ensembl Regulation -> Choose dataset -> Human binding motifs.<br>
+Click "Attributes" and check the "Strand" checkbox.<br>
+Export the file as compresssed file and leave the TSV selected. Press "GO".<br>
+<br>
+Open biomart file in BED converter and select "Name" for the Binding matrix column, and
+chromosome, start,end and strand as in the original file header. Press convert.
+<br>
+Uncheck "zero based" from the track settings.
+<br>
+<br>
+<b>Option 2 (requires linux environment, python, bgzip and tabix):</b><br><br>
+You can add your own motifs to BasePlayer/additions/motifs folder. Create a .txt file and add the desired PSSMs in the file. Use the jaspar_pfm_add.txt as a template.
+Motifs will be loaded to memory as the BasePlayer starts.
+</p>
+<p>
+Use for example <a href="https://www.cs.helsinki.fi/group/pssmfind/">MOODS</a> algorithm to align your motifs to the reference genome.
+</p>
+<p>
+Conver MOODS output to BED file with <a href="moods2bed.py">this python script</a>
+
+Use following bash command: <br>
+cat moods_output.txt | python moods2bed.py | bgzip -c > output.bed.gz
+<br>
+<br>
+After conversion create the tabix index for the file: <br>
+tabix -p bed output_bed.gz
+<br>
+<br>
+The file can now be opened as a BasePlayer track and the motifs are visualized as a sequence logos.
+</p>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 </div>
 </div>
